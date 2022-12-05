@@ -1,0 +1,11 @@
+# Image files
+images/
+
+# Python helpers
+__pycache__/
+.ipynb_checkpoints/
+.DS_Store
+
+# General helpers
+helpers.py
+archive
