@@ -3,7 +3,7 @@ import openai  # OpenAI Python library to make API calls
 import requests  # used to download images
 import os  # used to access filepaths
 from PIL import Image  # used to print and edit image
-from datetime import date
+from datetime import datetime
 import time
 
 # set API key
@@ -60,7 +60,7 @@ print(generation_response)
 # Iterate through the images and save them to files
 
 # Create a directory for the run
-run_dir = os.path.join(image_dir,str(date.today())+'_'+str(time.time()))
+run_dir = os.path.join(image_dir,'image_generation_'+datetime.now().strftime("%m%d%Y_%H%M%S"))
 
 if not os.path.isdir(run_dir):
     os.mkdir(run_dir)
