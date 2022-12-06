@@ -6,3 +6,8 @@ The purpose of this project is to build a basic ecommerce platform that enables 
 - Python 3.X (I used 3.7.7 to set this up)
 - A Printful account (which you can find here: https://www.printful.com/)
 - Printful API Token accessible from the Developer Portal: https://developers.printful.com/docs/
+
+**Environment Variables**
+This application requires you to have set the below variables in your OS:
+- OPENAI_API_KEY
+- PRINTFUL_API_KEY
