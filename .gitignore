@@ -1,5 +1,6 @@
 # Image files
 images/
+urls/
 
 # Python helpers
 __pycache__/

@@ -3,18 +3,40 @@ import openai
 import os
 import requests
 
+### CONFIG
+# set image directory
+image_dir = os.path.join(os.curdir,'images')
+
+# create the directory if it doesn't yet exist
+if not os.path.isdir(image_dir):
+    os.mkdir(image_dir)
+# clear any existing files down
+if len(os.listdir('images')) > 0:
+    os.system("rm images/*")
+
+# set URL directory
+url_dir = os.path.join(os.curdir,'urls')
+# create the directory if it doesn't yet exist
+if not os.path.isdir(url_dir):
+    os.mkdir(url_dir)
+# clear any existing files down
+if len(os.listdir('urls')) > 0:
+    os.system("rm urls/*")
+
+
+
 
 # set API key
 openai.api_key = os.environ.get("OPENAI_API_KEY")
+
+### DALLE PRINT APP
 
 st.title('DALL-E Print')
 
 st.subheader('Dazzle us with your creativity')
 
-if len(os.listdir('images')) > 0:
-        os.system("rm images/*")
 
-# Store the initial value of widgets in session state
+
 
 prompt = st.text_input(
     "Enter a prompt for the image you'd like to generate below",
