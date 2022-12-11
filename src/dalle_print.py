@@ -24,8 +24,6 @@ if len(os.listdir('urls')) > 0:
     os.system("rm urls/*")
 
 
-
-
 # set API key
 openai.api_key = os.environ.get("OPENAI_API_KEY")
 
@@ -35,12 +33,9 @@ st.title('DALL-E Print')
 
 st.subheader('Dazzle us with your creativity')
 
-
-
-
 prompt = st.text_input(
     "Enter a prompt for the image you'd like to generate below",
-    "A monkey riding a unicycle on the moon",
+    "",
     key="promptSubmission",
 )
 
@@ -50,7 +45,8 @@ size_option = option = st.selectbox(
     'What size of images would you like?',
     ('256x256', '512x512', '1024x1024'))
 
-st.write(f'You want to generate {prompt} {num_images} times at a size of {size_option}')
+if prompt != "":
+    st.write(f'You want to generate {prompt} {num_images} times at a size of {size_option}')
 
 if st.button('Submit', key='generationSubmit'):
     with st.spinner('Casting magic...'):

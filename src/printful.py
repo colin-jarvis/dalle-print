@@ -35,10 +35,21 @@ def get_variants(pf_key,variant_id):
                                     ,headers = get_pf_headers(pf_key))
     return variant_response
 
+# TODO: This function doesn't work and needs to be fixed
 def get_mockups(pf_key,product_id):
     mockup_response = requests.post(f'https://api.printful.com/mockup-generator/create-task/{product_id}'
                                     ,headers = get_pf_headers(pf_key))
-    return mockup_response
+    task_key = mockup_response.json()['result']['task_key']
+
+    mockup_result = None
+    while mockup_result is None:
+        try:
+            # connect
+            mockup_result = requests.get(f'https://api.printful.com/mockup-generator/task?task_key={task_key}'
+                                        ,headers=get_pf_headers(pf_key))
+        except:
+            pass
+    return mockup_result
 
 def get_post_headers(pf_key):
     post_headers = {
