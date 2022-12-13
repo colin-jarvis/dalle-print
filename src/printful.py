@@ -67,7 +67,7 @@ if __name__ == "__main__":
     variant_list = []
     for template in get_product_templates(pf_key):
         print(template)
-        variant = template['available_variant_ids'][0]
+        variants = template['available_variant_ids'][0]
 
         for variant in variants[:2]:
             print(f'Getting variant {variant}')
