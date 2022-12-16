@@ -1,5 +1,6 @@
 # Image files
 images/
+urls/
 
 # Python helpers
 __pycache__/
@@ -9,3 +10,13 @@ __pycache__/
 # General helpers
 helpers.py
 archive
+
+# Virtual environment
+dalle_print
+
+# Web app in development
+dalle_print_project
+
+# Project files
+selection.txt
+*.zip
